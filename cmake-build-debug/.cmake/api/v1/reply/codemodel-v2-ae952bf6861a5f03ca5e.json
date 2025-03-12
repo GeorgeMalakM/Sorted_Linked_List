@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Sorted_Linked_List",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Sorted_Linked_List::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Sorted_Linked_List-Debug-7b15d8e3a1402fc78e93.json",
+					"name" : "Sorted_Linked_List",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/FCAI/Second year assignment/Second term/data structure/assignment 1/Sorted_Linked_List/Sorted_Linked_List/cmake-build-debug",
+		"source" : "F:/FCAI/Second year assignment/Second term/data structure/assignment 1/Sorted_Linked_List/Sorted_Linked_List"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
