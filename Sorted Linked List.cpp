@@ -6,7 +6,7 @@
     * Author4: John Ayman Demian                     ID: 20230109
     * Author5: George Malak Magdy                    ID: 20231042
 
-* Date: ? / 3 / 2025
+* Date: 15 / 3 / 2025
 * Prof: Dr. Besheer
 
 * Description:
@@ -87,6 +87,7 @@ void SortedLinkedList::remove(int index) {
 
 // ------------------ OVERLOADED OPERATORS.
 ostream &operator<<(ostream &os, const SortedLinkedList &list) {
+    // George doesn't do this code.
     os << "[";
     Node *curr = list.head;
     while (curr != nullptr) {
@@ -99,7 +100,26 @@ ostream &operator<<(ostream &os, const SortedLinkedList &list) {
 }
 
 int SortedLinkedList::operator[](int index) {
-
+    // not done yet
+    try {
+        if (index < 0) {
+            throw out_of_range("The index cannot be negative, that will be out of bounds !!");
+        }
+        Node *Current = head;
+        int Cur_index = 0;
+        while (Current != nullptr) {
+            if (Cur_index == index) {
+                return Current->data;
+            }
+            Current = Current->next;
+            Cur_index++;
+        }
+        throw out_of_range("Index out of bounds!");
+    }
+    catch (const out_of_range& e) {
+        cout << "\nError: " << e.what() << endl;
+        return 0 ;
+    }
 }
 
 // ------------------ DESTRUCTOR.

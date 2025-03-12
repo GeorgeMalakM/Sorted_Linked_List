@@ -1,19 +1,9 @@
 # ninja log v5
-0	2117	7634954104305697	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-2123	2395	7634954107088253	Sorted_Linked_List.exe	ae07ef23a725f384
-7	1565	7634956309615566	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-1566	1695	7634956310881790	Sorted_Linked_List.exe	ae07ef23a725f384
-5	1621	7634959752221839	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-1622	1752	7634959753498424	Sorted_Linked_List.exe	ae07ef23a725f384
-5	1732	7634962462359062	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-1732	1863	7634962463655651	Sorted_Linked_List.exe	ae07ef23a725f384
-7	3162	7634963756925335	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-3166	3332	7634963758603195	Sorted_Linked_List.exe	ae07ef23a725f384
-7	2003	7634964656084446	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-2004	2152	7634964657530580	Sorted_Linked_List.exe	ae07ef23a725f384
-7	1837	7634965168008343	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-1838	1982	7634965169433325	Sorted_Linked_List.exe	ae07ef23a725f384
-4	1643	7634966274651809	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
-1644	1786	7634966276038679	Sorted_Linked_List.exe	ae07ef23a725f384
 5	1681	7634968299638067	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	419602528336ba21
 1681	1809	7634968300894662	Sorted_Linked_List.exe	ae07ef23a725f384
+1	1276	7635188377222635	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	1d775b57216e355a
+1278	1433	7635188378708612	Sorted_Linked_List.exe	bdd33b881464ff9f
+3	1022	7635192256455616	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	1d775b57216e355a
+1023	1126	7635192257460571	Sorted_Linked_List.exe	bdd33b881464ff9f
+5	1144	7635193084552604	CMakeFiles/Sorted_Linked_List.dir/Sorted_Linked_List.cpp.obj	1d775b57216e355a
+1145	1282	7635193085890562	Sorted_Linked_List.exe	bdd33b881464ff9f
