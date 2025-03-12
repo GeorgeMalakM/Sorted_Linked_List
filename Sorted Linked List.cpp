@@ -64,7 +64,22 @@ SortedLinkedList::SortedLinkedList() {
 // ------------------ INSERT FUNCTION.
 
 void SortedLinkedList::insert(int value) {
+    Node* newNode = new Node(value);
+    // Case 1: Insert at the beginning or empty list
+    if (head == nullptr || head->data >= value) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
 
+    // Case 2: Insert in the middle or end
+    Node* curr = head;
+    while (curr->next != nullptr && curr->next->data < value) {
+        curr = curr->next;
+    }
+
+    newNode->next = curr->next;
+    curr->next = newNode;
 }
 
 // ------------------ REMOVE FUNCTION.
@@ -76,7 +91,15 @@ void SortedLinkedList::remove(int index) {
 // ------------------ OVERLOADED OPERATORS.
 
 ostream& operator<<(ostream& os, const SortedLinkedList& list) {
-
+    os << "[";
+    Node* curr = list.head;
+    while (curr != nullptr) {
+        os << curr->data;
+        if (curr->next != nullptr) os << ",";
+        curr = curr->next;
+    }
+    os << "]";
+    return os;
 }
 
 int SortedLinkedList::operator[](int index) {
@@ -92,6 +115,15 @@ SortedLinkedList::~SortedLinkedList() {
 // --------------------------------------------- MAIN FUNCTION.
 
 int main() {
-    
+    SortedLinkedList l;
+    l.insert(5);
+    l.insert(10);
+    l.insert(5);
+    l.insert(1);
+    l.insert(3);
+    l.insert(4);
+    l.insert(12);
+    l.insert(-2);
+    cout << "Sorted Linked List: " << l << endl;
     return 0;
 }
