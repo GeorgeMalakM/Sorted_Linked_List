@@ -43,7 +43,7 @@ public:
     // Overloaded operators.
     friend ostream &operator<<(ostream &os, const SortedLinkedList &list);
 
-    int operator[](int index) const;
+    int operator[](int index) ;
 
     ~SortedLinkedList();    // Destructor to free the memory.
 };
@@ -145,27 +145,20 @@ ostream &operator<<(ostream &os, const SortedLinkedList &list) {
     return os;
 }
 
-int SortedLinkedList::operator[](int index) const {
-    // not done yet
-    try {
-        if (index < 0) {
-            throw out_of_range("The index cannot be negative, that will be out of bounds !!");
-        }
-        Node *Current = head;
-        int Cur_index = 0;
-        while (Current != nullptr) {
-            if (Cur_index == index) {
-                return Current->data;
+int SortedLinkedList::operator[](int index) {
+            if (index < 0) {
+                throw out_of_range("The index cannot be negative, that will be out of bounds !!");
             }
-            Current = Current->next;
-            Cur_index++;
-        }
-        throw out_of_range("Index out of bounds!");
-    }
-    catch (const out_of_range &e) {
-        cout << "\nError: " << e.what() << endl;
-        return 0;
-    }
+            Node *Current = head;
+            int Cur_index = 0;
+            while (Current != nullptr) {
+                if (Cur_index == index) {
+                    return Current->data;
+                }
+                Current = Current->next;
+                Cur_index++;
+            }
+            throw out_of_range("Index out of bounds!");
 }
 
 // ------------------ DESTRUCTOR.
@@ -221,7 +214,12 @@ int main() {
             do {
                 cout << "Please enter index of element you want to access.\n";
             } while (!getElement(element));
-            cout << "Element at index " << stoi(element) << " is " << list[stoi(element)] << "\n";
+            try {
+                cout << "Element at index " << stoi(element) << " is " << list[stoi(element)] << "\n";
+            }
+            catch (const out_of_range& e){
+                cout << "Error is : " << e.what() << "\n";
+            }
         } else if (choice == "3") {                                           // Deleting Elements from the Linked List.
             do {
                 cout << "Please enter index of element you want to delete.\n";

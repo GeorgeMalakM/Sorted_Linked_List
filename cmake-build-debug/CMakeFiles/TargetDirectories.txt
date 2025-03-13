@@ -1,3 +1,0 @@
-C:/Users/georg/OneDrive/Desktop/DStructure/Assigment/1/Sorted_Linked_List/cmake-build-debug/CMakeFiles/Sorted_Linked_List.dir
-C:/Users/georg/OneDrive/Desktop/DStructure/Assigment/1/Sorted_Linked_List/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/georg/OneDrive/Desktop/DStructure/Assigment/1/Sorted_Linked_List/cmake-build-debug/CMakeFiles/rebuild_cache.dir
