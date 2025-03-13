@@ -116,9 +116,9 @@ int SortedLinkedList::operator[](int index) {
         }
         throw out_of_range("Index out of bounds!");
     }
-    catch (const out_of_range& e) {
+    catch (const out_of_range &e) {
         cout << "\nError: " << e.what() << endl;
-        return 0 ;
+        return 0;
     }
 }
 
@@ -130,13 +130,13 @@ SortedLinkedList::~SortedLinkedList() {
 // --------------------------------------------- GET ELEMENT FUNCTION.
 bool getElement(string &element) {
     getline(cin, element);
-    if (element.empty()) {
+    if (element.empty()) {                                          // check if the input is empty.
         cout << "Invalid Input!\n";
         return false;
     } else {
         for (int i = 0; i < element.size(); ++i) {
             if (i == 0 && element[i] == '-') continue;              // check if the element is negative.
-            else if (element[i] < '0' || element[i] > '9') {
+            else if (element[i] < '0' || element[i] > '9') {        // check if the element is a number.
                 cout << "Invalid Input!\n";
                 return false;
             }
@@ -152,37 +152,37 @@ int main() {
 
     cout << "<------------------------------- WELCOME TO OUR LINKED LIST! -------------------------------> \n";
     while (true) {
-        cout << "\nWhat do you want to do?\n1. Inserting Elements into the Sorted Linked List.\n"
+        cout << "\nWhat do you want to do?\n1. Inserting Elements into the Sorted Linked List.\n"          // show menu.
                 "2. Accessing Elements Using Index Operator.\n3. Deleting Elements from the Linked List."
                 "\n4. print the list.\n5. Exit.\nEnter your choice (1-5):";
         getline(cin, choice);
 
         while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5") {
-            cout << "Invalid Input!\n";
-            cout << "\nWhat do you want to do?\n1. Inserting Elements into the Sorted Linked List.\n"
+            cout << "Invalid Input!\n";                                                   // check option exist in menu.
+            cout << "\nWhat do you want to do?\n1. Inserting Elements into the Sorted Linked List.\n"      // show menu.
                     "2. Accessing Elements Using Index Operator.\n3. Deleting Elements from the Linked List."
                     "\n4. print the list.\n5. Exit.\nEnter your choice (1-5):";
             getline(cin, choice);
         }
 
-        if (choice == "1") {
+        if (choice == "1") {                                          // Inserting Elements into the Sorted Linked List.
             do {
                 cout << "Please enter element to insert.\n";
             } while (!getElement(element));
             list.insert(stoi(element));
             cout << "Inserted successfully!\n";
-        } else if (choice == "2") {
+        } else if (choice == "2") {                                          // Accessing Elements Using Index Operator.
             do {
                 cout << "Please enter index of element you want to access.\n";
             } while (!getElement(element));
             cout << "Element at index " << stoi(element) << " is " << list[stoi(element)] << "\n";
-        } else if (choice == "3") {
+        } else if (choice == "3") {                                           // Deleting Elements from the Linked List.
             do {
                 cout << "Please enter index of element you want to delete.\n";
             } while (!getElement(element));
             list.remove(stoi(element));
             cout << "Deleted successfully!\n";
-        } else if (choice == "4") cout << "Sorted Linked List: " << list << "\n";
+        } else if (choice == "4") cout << "Sorted Linked List: " << list << "\n";                     // print the list.
         else if (choice == "5") break;
     }
     cout << "\nTHANKS FOR USING OUR APPLICATION :)";
