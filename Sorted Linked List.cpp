@@ -214,13 +214,13 @@ int main() {
             do {
                 cout << "Please enter index of element you want to access.\n";
             } while (!getElement(element));
-            try {
+            try{
                 cout << "Element at index " << stoi(element) << " is " << list[stoi(element)] << "\n";
             }
-            catch (const out_of_range& e){
-                cout << "Error is : " << e.what() << "\n";
+            catch (const out_of_range &e) {
+                cout << "\nError: " << e.what() << endl;
             }
-        } else if (choice == "3") {                                           // Deleting Elements from the Linked List.
+        } else if (choice == "3") {
             do {
                 cout << "Please enter index of element you want to delete.\n";
             } while (!getElement(element));
