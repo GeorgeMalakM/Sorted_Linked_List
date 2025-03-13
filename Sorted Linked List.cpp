@@ -43,13 +43,13 @@ public:
     // Overloaded operators.
     friend ostream &operator<<(ostream &os, const SortedLinkedList &list);
 
-    int operator[](int index);
+    int operator[](int index) const;
 
     ~SortedLinkedList();    // Destructor to free the memory.
 };
 
 // --------------------------------------------- IMPLEMENTATION OF NODE CLASS.
-Node::Node(int val) {
+Node::Node(const int val) {
     data = val;
     next = nullptr;
 }
@@ -61,8 +61,8 @@ SortedLinkedList::SortedLinkedList() {
 }
 
 // ------------------ INSERT FUNCTION.
-void SortedLinkedList::insert(int value) {
-    Node *newNode = new Node(value);
+void SortedLinkedList::insert(const int value) {
+    const auto newNode = new Node(value);
     // Case 1: Insert at the beginning or empty list
     if (head == nullptr || head->data >= value) {
         newNode->next = head;
@@ -83,13 +83,59 @@ void SortedLinkedList::insert(int value) {
 // ------------------ REMOVE FUNCTION.
 void SortedLinkedList::remove(int index) {
 
+    bool found = false;
+
+    if (!head) {      // case 1 list is empty
+        cout << "List is empty" << endl;
+        return;
+    }
+
+    while (index < 0) {      // case 2 out of range
+        cout << "Out of range" << endl;
+        cout << "Please, enter a valid index: " << endl;
+        cin >> index;
+    }
+
+    if (index == 0) {  // Case3  remove the first element
+        const Node* temp = head;
+        head = head->next;
+        delete temp;
+
+    }else {        // case 4 remove from  the middle or end
+
+        while (!found) {
+
+            Node* curr = head;
+            Node* prev = nullptr;
+            int count = 0;
+
+            // Traverse to the correct index
+            while (curr != nullptr && count < index) {
+                prev = curr;
+                curr = curr->next;
+                count++;
+            }
+
+            if (!curr) {     // if index out of range 
+                cout << "Index out of range" << endl;
+                cout << "Please, enter a valid index: " << endl;
+                cin >> index;
+                continue;
+            }
+
+            // Remove the node at the index
+            prev->next = curr->next;
+            delete curr;
+            found = true;
+        }
+        }
 }
 
 // ------------------ OVERLOADED OPERATORS.
 ostream &operator<<(ostream &os, const SortedLinkedList &list) {
     // George doesn't do this code.
     os << "[";
-    Node *curr = list.head;
+    const Node *curr = list.head;
     while (curr != nullptr) {
         os << curr->data;
         if (curr->next != nullptr) os << ",";
@@ -99,7 +145,7 @@ ostream &operator<<(ostream &os, const SortedLinkedList &list) {
     return os;
 }
 
-int SortedLinkedList::operator[](int index) {
+int SortedLinkedList::operator[](int index) const {
     // not done yet
     try {
         if (index < 0) {
