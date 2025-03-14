@@ -76,53 +76,49 @@ void SortedLinkedList::insert(const int value) {
     curr->next = newNode;
 }
 
-// ------------------ REMOVE FUNCTION
+// ------------------ REMOVE FUNCTION// ------------------ REMOVE FUNCTION
+
 void SortedLinkedList::remove(int index) {
-    while (true) {
 
-        if (!head) {  // Case 1: List is empty
-            cout << "List is empty" << endl;
-            return;
-        }
-
-        if (index < 0) {  // Case 2: Negative index
-            cout << "Out of range" << endl;
-            cout << "Please, enter a valid index: " ;
-            cin >> index;
-            continue;
-        }
-
-        // Case 3: Remove the first element
-        if (index == 0) {
-            Node* temp = head;
-            head = head->next;
-            delete temp;
-            return;
-        }
-
-        // Case 4: Remove from the middle or end
-        Node* curr = head;
-        Node* prev = nullptr;
-        int count = 0;
-
-        while (curr != nullptr && count < index) {
-            prev = curr;
-            curr = curr->next;
-            count++;
-        }
-
-        if (!curr) {  // If index is out of range
-            cout << "Index out of range" << endl;
-            cout << "Please, enter a valid index: " ;
-            cin >> index;
-            continue;
-        }
-
-        // Remove the node at the index
-        prev->next = curr->next;
-        delete curr;
+    if (!head) {  // Case 1: List is empty
+        cout << "List is empty" << endl;
         return;
     }
+
+    if (index < 0) {  // Case 2: Negative index
+        cout << "Out of range" << endl;
+        return;
+    }
+
+    // Case 3: Remove the first element
+    if (index == 0) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+
+    // Case 4: Remove from the middle or end
+    Node* curr = head;
+    Node* prev = nullptr;
+    int count = 0;
+
+    while (curr != nullptr && count < index) {
+        prev = curr;
+        curr = curr->next;
+        count++;
+    }
+
+    if (!curr) {  // If index is out of range
+        cout << "Index out of range" << endl;
+        return;
+    }
+
+    // Remove the node at the index
+    prev->next = curr->next;
+    delete curr;
+    
+    cout << "Removed Successfully.....\n" << endl;
 }
 
 
@@ -240,11 +236,10 @@ int main() {
         // Deleting Elements from the Linked List.
         else if (choice == "3") {
             do {
-                cout << "Please enter index of element you want to delete.\n";
+                cout << "Please, enter index of element you want to delete: ";
             } while (!getElement(element));
 
             list.remove(stoi(element));
-            cout << "Deleted successfully!\n";
         }
 
         // Print the list.
