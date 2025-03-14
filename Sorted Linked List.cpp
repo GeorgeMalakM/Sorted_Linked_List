@@ -76,58 +76,55 @@ void SortedLinkedList::insert(const int value) {
     curr->next = newNode;
 }
 
-// ------------------ REMOVE FUNCTION.
+// ------------------ REMOVE FUNCTION
 void SortedLinkedList::remove(int index) {
-    bool found = false;
+    while (true) {
 
-    // Case 1: The list is empty.
-    if (!head) {
-        cout << "List is empty" << endl;
-        return;
-    }
+        if (!head) {  // Case 1: List is empty
+            cout << "List is empty" << endl;
+            return;
+        }
 
-    // Case 2: Out of range.
-    while (index < 0) {
-        cout << "Out of range" << endl;
-        cout << "Please, enter a valid index: " << endl;
-        cin >> index;
-    }
+        if (index < 0) {  // Case 2: Negative index
+            cout << "Out of range" << endl;
+            cout << "Please, enter a valid index: " ;
+            cin >> index;
+            continue;
+        }
 
-    // Case 3: Remove the first element.
-    if (index == 0) {
-        const Node *temp = head;
-        head = head->next;
-        delete temp;
-        return;
-    }
+        // Case 3: Remove the first element
+        if (index == 0) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
 
-    // Case 4: Remove from the middle or end.
-    while (!found) {
-        Node *curr = head;
-        Node *prev = nullptr;
+        // Case 4: Remove from the middle or end
+        Node* curr = head;
+        Node* prev = nullptr;
         int count = 0;
 
-        // Traverse to the correct index.
         while (curr != nullptr && count < index) {
             prev = curr;
             curr = curr->next;
             count++;
         }
 
-        // If index out of range.
-        if (!curr) {
+        if (!curr) {  // If index is out of range
             cout << "Index out of range" << endl;
-            cout << "Please, enter a valid index: " << endl;
+            cout << "Please, enter a valid index: " ;
             cin >> index;
             continue;
         }
 
-        // Remove the node at the index.
+        // Remove the node at the index
         prev->next = curr->next;
         delete curr;
-        found = true;
+        return;
     }
 }
+
 
 // ------------------ OVERLOADED OPERATORS.
 ostream &operator<<(ostream &os, const SortedLinkedList &list) {
