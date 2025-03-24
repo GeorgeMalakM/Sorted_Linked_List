@@ -44,6 +44,7 @@ public:
 
     // Overloaded operators.
     friend ostream &operator<<(ostream &os, const SortedLinkedList &list);
+
     int operator[](int index);
 
     ~SortedLinkedList();                // Destructor to free the memory.
@@ -277,8 +278,20 @@ void initializeInMAin() {
 
     // Test Case 2: Accessing Elements Using Index Operator
     cout << "\nTest Case 2: Accessing Elements Using Index Operator\n";
-    cout << L[2] << endl;              // Output: 6
-//    cout << L[10] << endl;             // Throws out_of_range exception
+
+    try {                              // Output: 6
+        if (L[2]) cout << L[2] << "\n";
+    }
+    catch (const out_of_range &e) {
+        cout << "\nError: " << e.what() << endl;
+    }
+
+    try {                              // Throws out_of_range exception
+        if (L[10]) cout << L[10] << "\n";
+    }
+    catch (const out_of_range &e) {
+        cout << "\nError: " << e.what() << endl;
+    }
 
     // Test Case 3: Deleting Elements from the Linked List
     cout << "\nTest Case 3: Deleting Elements from the Linked List\n";
