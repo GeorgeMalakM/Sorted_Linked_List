@@ -1,3 +1,0 @@
-"G:\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Sorted_Linked_List.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\Sorted_Linked_List.dir/objects.a @CMakeFiles\Sorted_Linked_List.dir\objects1.rsp
-C:\msys64\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\Sorted_Linked_List.dir/objects.a -Wl,--no-whole-archive -o Sorted_Linked_List.exe -Wl,--out-implib,libSorted_Linked_List.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Sorted_Linked_List.dir\linkLibs.rsp
