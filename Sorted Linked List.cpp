@@ -26,7 +26,7 @@ class Node {
 public:
     int data;
     Node *next;
-    Node(int val);              // Constructor.
+    Node(int val);
 };
 
 // --------------------------------------------- SORTED LINKED LIST CLASS.
@@ -45,14 +45,14 @@ public:
 
 // --------------------------------------------- IMPLEMENTATION OF NODE CLASS.
 Node::Node(const int val) {
-    data = val;
-    next = nullptr;
+    this->data = val;
+    this->next = nullptr;
 }
 
 // --------------------------------------------- IMPLEMENTATION OF SORTED LINKED LIST CLASS.
 // ------------------ CONSTRUCTOR.
 SortedLinkedList::SortedLinkedList() {
-    head = nullptr;
+    this->head = nullptr;
 }
 
 // ------------------ INSERT FUNCTION.
@@ -60,14 +60,14 @@ void SortedLinkedList::insert(const int value) {
     const auto newNode = new Node(value);
 
     // Case 1: Insert at the beginning or empty list
-    if (head == nullptr || head->data >= value) {
-        newNode->next = head;
-        head = newNode;
+    if (this->head == nullptr || this->head->data >= value) {
+        newNode->next = this->head;
+        this->head = newNode;
         return;
     }
 
     // Case 2: Insert in the middle or end
-    Node *curr = head;
+    Node *curr = this->head;
     while (curr->next != nullptr && curr->next->data < value) {
         curr = curr->next;
     }
@@ -79,8 +79,7 @@ void SortedLinkedList::insert(const int value) {
 // ------------------ REMOVE FUNCTION
 
 void SortedLinkedList::remove(int index) {
-
-    if (!head) {  // Case 1: List is empty
+    if (!this->head) {  // Case 1: List is empty
         cout << "List is empty" << endl;
         return;
     }
@@ -92,8 +91,8 @@ void SortedLinkedList::remove(int index) {
 
     // Case 3: Remove the first element
     if (index == 0) {
-        Node* temp = head;
-        head = head->next;
+        Node* temp = this->head;
+        this->head = this->head->next;
         delete temp;
         cout << "Removed Successfully....." << endl;
         return;
@@ -110,7 +109,7 @@ void SortedLinkedList::remove(int index) {
         count++;
     }
 
-    if (!curr) {  // If index is out of range
+    if (!curr) {  // If the index is out of range
         cout << "Index out of range" << endl;
         return;
     }
@@ -140,7 +139,7 @@ int SortedLinkedList::operator[](int index) {
     if (index < 0) {
         throw out_of_range("The index cannot be negative, that will be out of bounds !!");
     }
-    Node *Current = head;
+    Node *Current = this->head;
     int Cur_index = 0;
     while (Current != nullptr) {
         if (Cur_index == index) {
@@ -154,13 +153,13 @@ int SortedLinkedList::operator[](int index) {
 
 // ------------------ DESTRUCTOR.
 SortedLinkedList::~SortedLinkedList() {
-    Node *current = head;
+    Node *current = this->head;
     while (current != nullptr) {
         Node *next = current->next;
         delete current;
         current = next;
     }
-    head = nullptr;
+    this->head = nullptr;
 }
 
 // --------------------------------------------- GET ELEMENT FUNCTION.
@@ -199,13 +198,14 @@ int main() {
 
         // Show the user the options to choose from and get the user's choice.
         while (true) {
-            cout << "\n 1) Inserting Elements into the Sorted Linked List\n"
-                    " 2) Accessing Elements Using Index Operator\n 3) Deleting Elements from the Linked List"
-                    "\n 4) Print the list\n 5) Exit\n\nPlease, enter your choice : ";
+            cout << "\nPlease, choose one of the following options:";
+            cout << "\n 1) Inserting Elements into the Sorted Linked List.\n"
+                    " 2) Accessing Elements Using Index Operator.\n 3) Deleting Elements from the Linked List."
+                    "\n 4) Print the list.\n 5) Exit.\nPlease, enter your choice : ";
             getline(cin, choice);
 
             if (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5") break;
-            cout << "Invalid Input : \n";
+            cout << "Invalid Input...\n";
         }
 
         // Inserting Elements into the Sorted Linked List.
@@ -249,6 +249,6 @@ int main() {
         else if (choice == "5") break;
     }
 
-    cout << "\n******************* THANKS FOR USING OUR APPLICATION *******************" << endl;
+    cout << "\n------------------- THANKS FOR USING OUR APPLICATION -------------------" << endl;
     return 0;
 }
