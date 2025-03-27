@@ -250,6 +250,7 @@ void runFromTerminal() {
 void initializeInMAin() {
     SortedLinkedList L;
 
+    cout << "// ---------------------------------------------Test Case 1\n\n";
     // Test Case 1: Inserting Elements into the Sorted Linked List
     cout << "\nTest Case 1: Inserting Elements into the Sorted Linked List\n";
     L.insert(5);                 // L = [5]
@@ -291,15 +292,16 @@ void initializeInMAin() {
     cout << L << endl;                 // Output: [6, 6]
 
 
+    cout << "\n// ---------------------------------------------Test Case 2\n\n";
     // Another test case: Inserting Elements into the Sorted Linked List
-    cout << "\nAnother test case: Inserting Elements into the Sorted Linked List\n";
+    cout << "\nTest Case 1: Inserting Elements into the Sorted Linked List\n";
     L.insert(-1);   // L = [-1, 6 , 6 ]
     L.insert(4);    // L = [-1 , 4, 6 , 6 ]
     L.insert(9);    // L = [-1,4, 6 , 6 ,9]
     L.insert(100);      // L = [-1,4, 6 , 6 ,9 ,100]
     cout << L << endl;                 // Output: [-1,4, 6 , 6 ,9 ,100]
 
-    cout << "\nAnother test case: Accessing Elements Using Index Operator\n";
+    cout << "\nTest Case 2: Accessing Elements Using Index Operator\n";
 
     try {                              // Output: 100
         if (L[5]) cout << L[5] << "\n";
