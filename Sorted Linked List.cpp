@@ -80,12 +80,12 @@ void SortedLinkedList::insert(const int value) {
 
 void SortedLinkedList::remove(int index) {
     if (!this->head) {  // Case 1: List is empty
-        cout << "List is empty" << endl;
+        cout << "\nList is empty" << endl;
         return;
     }
 
     if (index < 0) {  // Case 2: Negative index
-        cout << "Out of range" << endl;
+        cout << "\nOut of range" << endl;
         return;
     }
 
@@ -94,7 +94,7 @@ void SortedLinkedList::remove(int index) {
         Node* temp = this->head;
         this->head = this->head->next;
         delete temp;
-        cout << "Removed Successfully....." << endl;
+        cout << "\nRemoved Successfully....." << endl;
         return;
     }
 
@@ -110,7 +110,7 @@ void SortedLinkedList::remove(int index) {
     }
 
     if (!curr) {  // If the index is out of range
-        cout << "Index out of range" << endl;
+        cout << "\nIndex out of range" << endl;
         return;
     }
 
@@ -118,7 +118,7 @@ void SortedLinkedList::remove(int index) {
     prev->next = curr->next;
     delete curr;
 
-    cout << "Removed Successfully....." << endl;
+    cout << "\nRemoved Successfully....." << endl;
 }
 
 // ------------------ OVERLOADED OPERATORS.
@@ -196,9 +196,9 @@ void runFromTerminal() {
     while (true) {
         // Show the user the options to choose from and get the user's choice.
         while (true) {
-            cout << "\nWhat do you want to do?\n 1. Inserting Elements into the Sorted Linked List.\n"
-                    " 2. Accessing Elements Using Index Operator.\n 3. Deleting Elements from the Linked List."
-                    "\n 4. Print the list.\n 5. Exit From menu.\nEnter your choice (1-5):";
+            cout << "\n 1) Inserting Elements into the Sorted Linked List.\n"
+                    " 2) Accessing Elements Using Index Operator.\n 3) Deleting Elements from the Linked List."
+                    "\n 4) Print the list.\n 5) Exit From menu.\n\nPlease, enter your choice : ";
             getline(cin, choice);
 
             if (choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5") break;
@@ -208,17 +208,17 @@ void runFromTerminal() {
         // Inserting Elements into the Sorted Linked List.
         if (choice == "1") {
             do {
-                cout << "Please enter element to insert.\n";
+                cout << "Please, enter element to insert: ";
             } while (!getElement(element));
 
             list.insert(stoi(element));
-            cout << "Inserted successfully!\n";
+            cout << "\nInserted successfully.....\n";
         }
 
             // Accessing Elements Using Index Operator.
         else if (choice == "2") {
             do {
-                cout << "Please enter index of element you want to access.\n";
+                cout << "Please, enter index of element you want to access: ";
             } while (!getElement(element));
 
             try {
@@ -343,7 +343,7 @@ int main() {
             cout << "1) Run From Terminal." << endl;
             cout << "2) Initialize in main." << endl;
             cout << "3) Exit." << endl;
-            cout << "Please, enter your choice:";
+            cout << "\nPlease, enter your choice:";
             getline(cin, choice);
 
             // Check the validity of input.
